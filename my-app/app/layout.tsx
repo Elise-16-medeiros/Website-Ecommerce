@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Raleway, Libre_Baskerville } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import ModalProvider from "@/providers/modal-provider";
 import "./globals.css";
 
 const ralaway = Raleway({
@@ -33,7 +34,10 @@ export default function RootLayout({
         lang="pt-br"
         className={`${ralaway.variable} ${libre_baskerville.variable}`}
       >
-        <body>{children}</body>
+        <body>
+          <ModalProvider />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
