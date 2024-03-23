@@ -1,39 +1,42 @@
 import type { Metadata } from "next";
 import { Raleway, Libre_Baskerville } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
 const ralaway = Raleway({
-	subsets: ["latin"],
-	weight: ["600", "700", "800", "900"],
-	display: "swap",
-	variable: "--font-raleway-title",
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-raleway-title",
 });
 
 const libre_baskerville = Libre_Baskerville({
-	subsets: ["latin"],
-	weight: ["400"],
-	display: "swap",
-	variable: "--font-libreBaskerville-body",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-libreBaskerville-body",
 });
 
 export const metadata: Metadata = {
-	title: "Create Next App",
-	description: "E-commerce de tênis",
+  title: "Create Next App",
+  description: "E-commerce de tênis",
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html
-			lang="pt-br"
-			className={`${ralaway.variable} ${libre_baskerville.variable}`}
-		>
-			<body>{children}</body>
-		</html>
-	);
+  return (
+    <ClerkProvider>
+      <html
+        lang="pt-br"
+        className={`${ralaway.variable} ${libre_baskerville.variable}`}
+      >
+        <body>{children}</body>
+      </html>
+    </ClerkProvider>
+  );
 }
 
 /* import type { Metadata } from "next";
