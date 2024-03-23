@@ -71,10 +71,10 @@
     @apply border-border;
   }
   html {
-    font-family: var(--font-libreBaskerville-body) @apply h-full;
+    font-family: var(--font-body) @apply h-full;
   }
   body {
-    @apply bg-background text-foreground text-sm h-full;
+    @apply h-full bg-background text-sm text-foreground;
   }
   h1,
   h2,
@@ -82,7 +82,7 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-raleway-title);
+    font-family: var(--font-title);
   }
   h1 {
     @apply text-5xl;
@@ -104,6 +104,6 @@
   }
 
   button {
-    font-family: var(--font-raleway-title);
+    font-family: var(--font-title);
   }
 }
