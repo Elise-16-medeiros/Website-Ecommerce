@@ -33,7 +33,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="pt-br"
-        className={`${oswald.variable} ${sourceSans.variable}`}
+        className={`${oswald.className} ${sourceSans.className}`}
       >
         <body>
           <ToasterProvider />

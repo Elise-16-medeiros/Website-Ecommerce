@@ -9,6 +9,7 @@ export default function ModalProvider() {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
   if (!isMounted) {
     return null;
   }
